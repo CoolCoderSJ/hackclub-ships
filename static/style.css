@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+body {
+  background: #f0fcf5 url('https://treehouse-code-samples.s3.amazonaws.com/CSS-DD/codepen/stage-12/island.png') repeat-x 100% -460px;
+  -webkit-background-size: 780px;
+  background-size: 780px;
+}
+
+h1, p, a {
+    color: white;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.boat {
+  width: 380px;
+  position: absolute;
+  top: 30%;
+  left: 0%;
+  -webkit-animation: rock-boat 3s ease-in-out infinite;
+  animation: rock-boat 3s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.boat img {
+  width: 100%;
+}
+.boat1 {
+  left: 35%;
+}
+.boat2 {
+  left: 70%;
+}
+.boat3 {
+  left: 20%;
+  top: 65%;
+}
+.boat4 {
+  left: 55%;
+  top: 65%;
+}
+
+.boat5 {
+  left: 105%;
+}
+
+.boat6 {
+  left: 140%;
+}
+
+.boat7 {
+  left: 175%;
+}
+
+.boat8 {
+  top: 65%;
+  left: 90%;
+}
+
+.boat9 {
+  top: 65%;
+  left: 125%;
+}
+
+.boat10 {
+  top: 65%;
+  left: 160%;
+}
+
+.boat::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 120px;
+  background: url('https://treehouse-code-samples.s3.amazonaws.com/CSS-DD/codepen/stage-12/steam.png') no-repeat;
+  -webkit-background-size: 120px;
+  background-size: 120px;
+  position: absolute;
+  top: -25%;
+  left: 5%;
+  -webkit-animation: steam 4s 2s infinite;
+  animation: steam 4s 2s infinite;
+}
+
+@-webkit-keyframes rock-boat {
+  50% {
+    -webkit-transform: rotate(-5deg) translateY(-5px);
+  }
+}
+@-webkit-keyframes steam {
+  40%, 60% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate(-15%, -35%) rotateZ(20deg);
+  }
+}
+
+
+@keyframes rock-boat {
+    50% {
+      transform: rotate(-5deg) translateY(-5px);
+    }
+  }
+  @keyframes steam {
+    40%, 60% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-15%, -35%) rotateZ(20deg);
+    }
+  }
+  
+
+.info {
+    position: absolute;
+    bottom: 2.5%;
+    left: 0%;
+    width: 300px;
+    padding: 20px;
+}
+
+.person {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.pfp {
+    width: 50px !important;
+    height: 100%;
+    border-radius: 999999999999999999px;
+}
+
+.modal {
+    position: absolute;
+    top: 0%;
+    left: 25%;
+    width: 200px;
+    height: 200px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 6px;
+    opacity: 0;
+}
+
+.boat:hover .modal {
+    opacity: 1;
+}
+
+.project {
+    width: 190px;
+    height: 175px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.link {
+    padding-bottom: 10px;
+}

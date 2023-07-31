@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hackclub Ships</title>
+    <link rel="stylesheet" href="/static/style.css">
+    </head>
+<body>
+    {% for i in range(msgs|length) %}
+    <div class="boat {{ msgs[i]['id'] }}">
+        <img src="https://treehouse-code-samples.s3.amazonaws.com/CSS-DD/codepen/stage-12/boat.png" alt="tugboat">
+        <div class="info">
+            <div class="person">
+                <img src="{{ msgs[i]['pfp'] }}" class="pfp">
+                <h1>{{ msgs[i]['user'] }}</h1>
+            </div>
+        </div>
+        <div class="modal">
+            <p class="project">
+                {{ msgs[i]['text'] }}
+            </p>
+            <a href="{{ msgs[i]['link'] }}" class="link" target="_blank">Read more</a>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>
